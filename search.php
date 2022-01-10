@@ -23,7 +23,7 @@
 			<!-- END -->
 			<!-- Main content -->
 			<div id="content">
-				<h1>Search results</h1>
+				<h1>Resultat des recherches</h1>
 
 				<table class="globalTables" cellpadding="0" cellspacing="0">
 					<thead>
@@ -43,7 +43,7 @@
 								else {
 									echo 'desc';
 								}
-								?>">Name</a>
+								?>">Nom</a>
 							</th>
 							<th>
 								<a href="?q=<?php echo $_GET['q']; ?>&by=category&order=<?php 
@@ -59,7 +59,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Category</a>
+								?>">Categorie</a>
 							</th>
 							<th>
 								<a href="?q=<?php echo $_GET['q']; ?>&by=manufacturer&order=<?php 
@@ -75,7 +75,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Manufacturer</a>
+								?>">Fabricant</a>
 							</th>
 							<th>
 								<a href="?q=<?php echo $_GET['q']; ?>&by=package&order=<?php 
@@ -91,7 +91,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Package</a>
+								?>">Empreinte</a>
 							</th>
 							<th>
 								<a href="?q=<?php echo $_GET['q']; ?>&by=pins&order=<?php 
@@ -128,7 +128,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">SMD</a>
+								?>">CMS</a>
 							</th>
 							<th>
 								<a href="?q=<?php echo $_GET['q']; ?>&by=price&order=<?php 
@@ -144,7 +144,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Price</a>
+								?>">Prix</a>
 							</th>
 							<th>
 								<a href="?q=<?php echo $_GET['q']; ?>&by=quantity&order=<?php 
@@ -160,10 +160,10 @@
 								else {
 									echo 'asc';
 								}
-								?>">Quantity</a>
+								?>">Quantite</a>
 							</th>
 							<th>
-								Comment
+								Commentaires
 							</th>
 						</tr>
 					</thead>
