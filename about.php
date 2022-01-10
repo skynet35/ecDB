@@ -26,9 +26,9 @@
 			<!-- Main menu -->
 			<div id="menu">
 				<ul>
-					<li><a href="."><span class="icon medium key"></span> Login</a></li>
-					<li><a href="register.php"><span class="icon medium user"></span> Register</a></li>
-					<li><a href="about.php" class="selected"><span class="icon medium document"></span> About</a></li>
+					<li><a href="."><span class="icon medium key"></span> Connexion</a></li>
+					<li><a href="register.php"><span class="icon medium user"></span> S'enregistrer</a></li>
+					<li><a href="about.php" class="selected"><span class="icon medium document"></span> A propos</a></li>
 					<li><a href="/blog"><span class="icon medium docLinesStright"></span> Blog</a></li>
 				</ul>
 			</div>
@@ -41,24 +41,24 @@
 						<div class="message blue">
 							Check out the new <a href="/blog">ecDB blog.</a> Or follow <a href="https://twitter.com/#!/ecDBnet">@ecDBnet</a> at Twitter to get the latest updates!
 						</div>
-						<h1>What is ecDB?</h1>
+						<h1>Qu'est-ce que ecDB?</h1>
 							
-							ecDB is basically a place where you, as an electronics hobbyist (or professional) can add your own components to your personal database to keep track of what components you own, where they are, how many you own and so on.
+							ECDB est essentiellement un lieu où vous, comme un amateur en électronique (ou professionnel) pouvez ajouter vos propres composants à votre base de données personnelle pour garder une trace des composants que vous possédez, où ils sont, combien vous en possédez et ainsi de suite.
 								
 						<br /><br />
 						<a href="img/about/index.png"><img src="img/about/index_thumbnail.png"></a>				
 						<a href="img/about/add.png"><img src="img/about/add_thumbnail.png"></a><br /><br />
-						<h1>Who & Why?</h1>
+						<h1>Qui & Quoi?</h1>
 								
-							ecDB is created by <a target="_blank" href="http://nilsf.se">Nils Fredriksson</a> and designed by <a target="_blank" href="http://www.buildlog.eu">Buildlog</a>. <br /><br />
+							ecDB a ete cree par <a target="_blank" href="http://nilsf.se">Nils Fredriksson</a> and conçu avec <a target="_blank" href="http://www.buildlog.eu">Buildlog</a>. <br /><br />
 								
-							Me, Nils, have always wanted to have a system like this to keep track of what component I own. Before I created this system I (I guess you too...) had to dig through boxes filled with components to maybe find that component I needed. This is an unnecessary task to do, it not only takes time, and it also can be really frustrating not to find that component you are looking for. So I ended up creating this website where I easily can keep track of my components! 
+							J'ai toujours voulu avoir un système permettant de garder une trace des composants que je possède. Avant de créer ce système  (je suppose que vous aussi ...),je devais fouiller dans mes boîtes remplies de composants pour trouver, peut-être, le composant dont j'avais besoin. C'était une tâche nécessaire, prennant du temps, et aussi être très frustrante. J'ai donc fini par créer ce site où je peux facilement garder une trace de mes composants! 
 							
 						<br /><br />
-						<h1>What does it cost?</h1>
+						<h1>Combien cela coûte?</h1>
 						
-							ecDB is completely free!<br />
-							But if you like ecDB you can use this button to donate us some money.
+							ecDB est complètement gratuit!<br />
+							Mais si vous aimez ECDB, vous pouvez utiliser ce bouton pour nous donner de l'argent.
 							<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 								<input type="hidden" name="cmd" value="_s-xclick">
 								<input type="hidden" name="hosted_button_id" value="7ZT5UY5XMHA52">
@@ -66,19 +66,19 @@
 							</form>
 							
 						<br />
-						<h1>Is ecDB really done?</h1>
-						No! ecDB is still under development. Here are some of the upcoming features:<br /><br />
+						<h1>Est-ce que EcDB est terminé?</h1>
+						Non! ECDB est encore en développement. Voici quelques-unes des fonctionnalités à venir:<br /><br />
 						
-						- Public components - a place where you easily can trade components.<br />
-						- View to physically print the personal database. Old-school typewritten text and nice colums!<br />
-						- Datasheet and picture uploading.<br />
-						- Advanced component search with parameters.<br />
-						- Log for each component. See when the component last was used/edited/bought etc.<br />
-						- Barcode implementation for easy storage management.<br />
-						- Import and export of personal database to text/spreadsheet.<br />
-						- Quick edit function of component data directly from the database view.<br />
-						- Add personal categories and fields.<br />
-						- Borrow component data from other components in the database to easily add components.
+						- Composantes publiques - un endroit où vous pouvez facilement échanger des composants. <br />
+						- Voir et imprimer la base de données personnelle, avec une bonne mise en forme texte/colonnes! <br />
+						- Chargement de datasheet et d'images.<br />
+						- Recherche avancée de composants avec différents paramètres.<br />
+						- Connectez-vous pour chaque composant. Voir lorsque le dernier composant a été utilisé / modifié / etc acheté .<br />
+						- La mise en œuvre de codes à barres pour la gestion du stockage facile. <br />
+						- Importation et exportation de base de données personnelle au texte / tableur. <br />
+						- Fonction d'édition rapide de données de composants directement à partir de la vue de base de données. <br />
+						- Ajouter des catégories et des champs personnels<br />
+						- Emprunter des données de composants provenant d'autres composants dans la base de données d'ajouter facilement des composants.
 					</div>
 					<div class="right"></div>
 				</div>
