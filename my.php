@@ -5,8 +5,8 @@
 	
 	$owner 	= 	$_SESSION['SESS_MEMBER_ID'];
 
-	$GetDataComponent = mysql_query("SELECT * FROM members WHERE member_id = ".$owner."");
-	$executesql = mysql_fetch_assoc($GetDataComponent);
+	$GetDataComponent = mysqli_query($link,"SELECT * FROM members WHERE member_id = ".$owner."");
+	$executesql = mysqli_fetch_assoc($GetDataComponent);
 ?>
 <!DOCTYPE HTML> 
 <html>
@@ -35,7 +35,7 @@
 			
 			<!-- Main content -->
 			<div id="content">
-				<h1>Settings</h1>
+				<h1>Mon compte</h1>
 
 				<?php
 					include('include/include_my_settings.php');
@@ -48,13 +48,13 @@
 						<tbody>
 							<tr>
 								<td class="boldText">
-									First Name
+									Prenom
 								</td>
 								<td>
 									<input name="firstname" type="text" class="medium" value="<?php if(isset($_POST['submit'])) { echo $_POST['firstname']; } else { echo $executesql['firstname']; } ?>" />
 								</td>
 								<td class="boldText">
-									Last Name
+									Nom
 								</td>
 								<td>
 									<input name="lastname" type="text" class="medium" value="<?php if(isset($_POST['submit'])) { echo $_POST['lastname']; } else { echo $executesql['lastname']; } ?>" />
@@ -70,13 +70,13 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Password
+									Mot de pass
 								</td>
 								<td>
 									<input name="oldpass" class="medium" type="password" value="" />
 								</td>
 								<td class="boldText">
-									New password
+									Repetez Mot de pass
 								</td>
 								<td>
 									<input name="newpass" class="medium" type="password" value="" onpaste="return false;" />
@@ -84,7 +84,7 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Measurement System
+									Systeme de mesure
 								</td>
 								<td>
 									<?php
@@ -109,7 +109,7 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Currency
+									Monnaie
 								</td>
 								<td>
 									<select name="currency">
@@ -414,7 +414,7 @@
 					</table>
 					<div class="buttons">
 						<div class="input">
-							<button class="button green" name="submit" type="submit"><span class="icon medium save"></span> Save</button>
+							<button class="button green" name="submit" type="submit"><span class="icon medium save"></span> Sauver</button>
 						</div>
 					</div>
 				</form>
