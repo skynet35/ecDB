@@ -136,7 +136,7 @@
 				
 				<form class="globalForms noPadding" action="" method="post">
 					<div class="textBoxInput">
-						<label class="keyWord boldText">Comment</label>
+						<label class="keyWord boldText">Commentaires</label>
 						<div class="text">
 							<textarea name="comment" rows="4" cols="104"><?php echo $executesql['comment']; ?></textarea>
 						</div>
@@ -145,13 +145,13 @@
 						<tbody>
 							<tr>
 								<td class="boldText">
-									Name
+									Nom
 								</td>
 								<td>
 									<input name="name" type="text" class="medium" value="<?php echo $executesql['name']; ?>" id="name" />
 								</td>
 								<td class="boldText">
-									Category
+									Categorie
 								</td>
 								<td>
 									<select name="category">
@@ -189,7 +189,7 @@
 									</select>
 								</td>
 								<td class="boldText">
-									Quantity
+									Quantite
 								</td>
 								<td>
 									<input name="quantity" type="text" class="small" value="<?php echo $executesql['quantity']; ?>" id="quantity"/>
@@ -199,13 +199,13 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Manufacturer
+									Fabricant
 								</td>
 								<td>
 									<input name="manufacturer" type="text" class="medium" value="<?php echo $executesql['manufacturer']; ?>" />
 								</td>
 								<td class="boldText">
-									Package
+									Empreinte
 								</td>
 								<td>
 									<input name="package" type="text" class="medium" value="<?php echo $executesql['package']; ?>" />
@@ -219,19 +219,19 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Location
+									Emplacement
 								</td>
 								<td>
 									<input name="location" type="text" class="medium" value="<?php echo $executesql['location']; ?>" id="location" />
 								</td>
 								<td class="boldText">
-									Price
+									Prix
 								</td>
 								<td>
 									<input name="price" type="text" class="small" value="<?php echo $executesql['price']; ?>" id="price" /> <?php echo $personal['currency']; ?>
 								</td>
 								<td class="boldText">
-									To order
+									A commander
 								</td>
 								<td>
 									<input name="orderquant" type="text" class="small" value="<?php echo $executesql['order_quantity']; ?>" id="orderquant"/>
@@ -249,7 +249,7 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									SMD
+									CMS
 								</td>
 								<td>
 									<?php
@@ -264,7 +264,7 @@
 									?>
 								</td>
 								<td class="boldText">
-									Scrap
+									Image
 								</td>
 								<td>
 									<?php
@@ -304,13 +304,13 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Weight
+									Longueur
 								</td>
 								<td>
 									<input name="weight" type="text" class="small" value="<?php echo $executesql['weight']; ?>" /> <?php if($personal['measurement'] == 1){echo 'g';} else {echo 'g'; } ?>
 								</td>
 								<td class="boldText">
-									Width
+									Largeur
 								</td>
 								<td>
 									<input name="width" type="text" class="small" value="<?php echo $executesql['width']; ?>" /> <?php if($personal['measurement'] == 1){echo 'mm';} else {echo 'in'; } ?>
@@ -322,7 +322,7 @@
 								<td></td>
 								<td></td>
 								<td class="boldText">
-									Depth
+									Epaisseur
 								</td>
 								<td>
 									<input name="depth" type="text" class="small" value="<?php echo $executesql['depth']; ?>" /> <?php if($personal['measurement'] == 1){echo 'mm';} else {echo 'in'; } ?>
@@ -338,7 +338,7 @@
 									<input name="datasheet" type="text" class="medium" value="<?php echo $executesql['datasheet']; ?>" />
 								</td>
 								<td class="boldText">
-									Height
+									Hauteur
 								</td>
 								<td>
 									<input name="height" type="text" class="small" value="<?php echo $executesql['height']; ?>" /> <?php if($personal['measurement'] == 1){echo 'mm';} else {echo 'in'; } ?>
@@ -394,10 +394,10 @@
 							<tr>
 								<td></td>
 								<td class="boldText">
-									Add to project
+									Ajouter au projet
 									</td>
 								<td class="boldText">
-									Quantity
+									Quantite
 								</td>
 								
 									<?php
@@ -410,8 +410,8 @@
 											echo '<td></td>';
 										}
 										else {
-											echo '<td class="boldText">Project</td>';
-											echo '<td class="boldText">Quantity</td>';
+											echo '<td class="boldText">Projet</td>';
+											echo '<td class="boldText">Quantite</td>';
 											echo '<td></td>';											
 										}
 										
@@ -442,9 +442,9 @@
 					
 					<div class="buttons">
 						<div class="input">
-							<button class="button green" name="update" type="submit"><span class="icon medium save"></span> Update</button>
-							<button class="button" name="based" type="submit"><span class="icon medium sqPlus"></span> New based on this</button>
-							<button class="button red" name="delete" type="submit"><span class="icon medium trash"></span> Delete</button>
+							<button class="button green" name="update" type="submit"><span class="icon medium save"></span> Mettre a jour</button>
+							<button class="button" name="based" type="submit"><span class="icon medium sqPlus"></span> Nouvelle base</button>
+							<button class="button red" name="delete" type="submit"><span class="icon medium trash"></span> Supprimer</button>
 						</div>
 					</div>
 				</form>
