@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link rel="apple-touch-icon" href="img/apple.png" />
-		<title>Connexion - ecDB</title>
+		<title>Login - ecDB</title>
 		<?php include_once("include/analytics.php") ?>
 		
 	</head>
@@ -33,7 +33,7 @@
 			<div id="content">
 				
 				<div class="message red">
-					Connexion échouée, veuillez réessayer!
+					La connexion à échouée, veuillez réessayer!
 				</div>
 				
 				<div class="loginWrapper">
@@ -42,7 +42,7 @@
 						
 						<form class="globalForms" name="loginForm" method="post" action="login-exec.php">
 							<div class="textInput">
-								<label class="keyWord">Nom d'utilisateur</label>
+								<label class="keyWord">Identifiant</label>
 								<div class="input"><input name="login" class="medium" type="text" id="login"/></div>
 							</div>
 							<div class="textInput">
@@ -51,7 +51,7 @@
 							</div>
 							<div class="buttons">
 								<div class="input">
-									<button class="button green" name="Submit" type="submit"><span class="icon medium key"></span> Valider</button>
+									<button class="button green" name="Submit" type="submit"><span class="icon medium key"></span> Login</button>
 								</div>
 							</div>
 						</form>
