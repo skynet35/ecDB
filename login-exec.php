@@ -14,13 +14,13 @@
 	//Connect to mysql server
 	$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	if(!$link) {
-		die('Failed to connect to server: ' . mysql_error());
+		die('Impossible de ce connecter au serveur ' . mysql_error());
 	}
 	
 	//Select database
 	$db = mysql_select_db(DB_DATABASE);
 	if(!$db) {
-		die("Unable to select database");
+		die("Impossible de ce connecter a la base");
 	}
 	
 	//Function to sanitize values received from the form. Prevents SQL injection
@@ -38,11 +38,11 @@
 	
 	//Input Validations
 	if($login == '') {
-		$errmsg_arr[] = 'Login ID missing';
+		$errmsg_arr[] = 'Nom d utilisateur manquant';
 		$errflag = true;
 	}
 	if($password == '') {
-		$errmsg_arr[] = 'Password missing';
+		$errmsg_arr[] = 'Mot de pass manquant';
 		$errflag = true;
 	}
 	
