@@ -78,7 +78,7 @@
 											echo 'desc'; 
 										} 
 								?>
-								">Name</a></th>
+								">Nom</a></th>
 
 							<th><a href="?<?php if(isset($_GET['subcat'])) {echo 'subcat';}else {echo 'cat';} ?>=<?php if(isset($_GET['cat'])){ echo $_GET['cat'];} if(isset($_GET['subcat'])){ echo $_GET['subcat'];} ?>&by=category&order=<?php if(isset($_GET['order'])) { $order = $_GET['order']; if ($order == 'asc') {	echo 'desc'; } else { echo 'asc'; } } else { echo 'desc'; } ?>">Category</a></th>
 
@@ -94,7 +94,7 @@
 							<th><a href="?<?php if(isset($_GET['subcat'])) {echo 'subcat';}else {echo 'cat';} ?>=<?php if(isset($_GET['cat'])){ echo $_GET['cat'];} if(isset($_GET['subcat'])){ echo $_GET['subcat'];} ?>&by=price&order=<?php if(isset($_GET['order'])) { $order = $_GET['order']; if ($order == 'asc') {	echo 'desc'; } else { echo 'asc'; } } else { echo 'desc'; } ?>">Price</a></th>
 
 							<th><a href="?<?php if(isset($_GET['subcat'])) {echo 'subcat';}else {echo 'cat';} ?>=<?php if(isset($_GET['cat'])){ echo $_GET['cat'];} if(isset($_GET['subcat'])){ echo $_GET['subcat'];} ?>&by=quantity&order=<?php if(isset($_GET['order'])) { $order = $_GET['order']; if ($order == 'asc') {	echo 'desc'; } else { echo 'asc'; } } else { echo 'desc'; } ?>">Quantity</a></th>
-							<th>Comment</th>
+							<th>Commentaires</th>
 						</tr>
 					</thead>
 					<tbody>
