@@ -39,10 +39,9 @@
 			<!-- Main menu -->
 			<div id="menu">
 				<ul>
-					<li><a href="." class="selected"><span class="icon medium key"></span> Login</a></li>
-					<li><a href="register.php"><span class="icon medium user"></span> Register</a></li>
-					<li><a href="about.php"><span class="icon medium document"></span> About</a></li>
-					<li><a href="/blog"><span class="icon medium docLinesStright"></span> Blog</a></li>
+					<li><a href="." class="selected"><span class="icon medium key"></span> Connexion</a></li>
+					<!--<li><a href="register.php"><span class="icon medium user"></span> S'enregistrer</a></li>-->
+					<li><a href="about.php"><span class="icon medium document"></span> A propos</a></li>
 				</ul>
 			</div>
 			<!-- END -->
@@ -67,33 +66,16 @@
 				<div class="loginWrapper">
 					<div class="left">
 						<div class="message blue">
-							<script type="text/javascript">
-								jQuery(function ($) {
-								    $(".tweet").tweet({
-								        username: "ecdbnet",
-								        avatar_size: 40,
-								        count: 1,
-								        loading_text: "loading tweets..."
-								    });
-								});
-							</script>
-							<div class="tweet query" style="width:100%;"></div>
-						</div>
+								<div class="aboutECDB">Gerez votre base de composants</div>
 						<div class="aboutECDB">
-							You want to build something and need some components for your project.
-							You don't know if you have those components, or where they are.
-							This is a problem many of us recognise.
-							We want to change that for you by making a online inventory system for your electronic components that is easy to use.
-							Add your components. Search to find it, and then use it!
 						</div>
-
 						<form class="globalForms" name="loginForm" method="post" action="login-exec.php">
 							<div class="textInput">
-								<label class="keyWord">Username</label>
-								<div class="input">To try ecDB, login with demo:demo<br /><input name="login" class="medium" type="text" id="login"/></div>
+								<label class="keyWord">Nom d'utilisateur</label>
+								<div class="input">Connexion<br /><input name="login" class="medium" type="text" id="login"/></div>
 							</div>
 							<div class="textInput">
-								<label class="keyWord">Password</label>
+								<label class="keyWord">Mot de pass</label>
 								<div class="input"><input name="password" class="medium" type="password" id="password"/></div>
 							</div>
 							<div class="buttons">
