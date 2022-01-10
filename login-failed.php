@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link rel="apple-touch-icon" href="img/apple.png" />
-		<title>Login - ecDB</title>
+		<title>Connexion - ecDB</title>
 		<?php include_once("include/analytics.php") ?>
 		
 	</head>
@@ -23,10 +23,8 @@
 			<!-- Main menu -->
 			<div id="menu">
 				<ul>
-					<li><a href="."><span class="icon medium key" class="selected"></span> Login</a></li>
-					<li><a href="register.php"><span class="icon medium user"></span> Register</a></li>
-					<li><a href="about.php"><span class="icon medium document"></span> About</a></li>
-					<li><a href="/blog"><span class="icon medium docLinesStright"></span> Blog</a></li>
+					<li><a href="."><span class="icon medium key" class="selected"></span> Connexion</a></li>
+					<li><a href="register.php"><span class="icon medium user"></span> S'enregistrer</a></li>
 				</ul>
 			</div>
 			<!-- END -->
@@ -35,7 +33,7 @@
 			<div id="content">
 				
 				<div class="message red">
-					Login failed, please try again.
+					Connexion échouée, veuillez réessayer!
 				</div>
 				
 				<div class="loginWrapper">
@@ -44,16 +42,16 @@
 						
 						<form class="globalForms" name="loginForm" method="post" action="login-exec.php">
 							<div class="textInput">
-								<label class="keyWord">Username</label>
+								<label class="keyWord">Nom d'utilisateur</label>
 								<div class="input"><input name="login" class="medium" type="text" id="login"/></div>
 							</div>
 							<div class="textInput">
-								<label class="keyWord">Password</label>
+								<label class="keyWord">Mot de pass</label>
 								<div class="input"><input name="password" class="medium" type="password" id="password"/></div>
 							</div>
 							<div class="buttons">
 								<div class="input">
-									<button class="button green" name="Submit" type="submit"><span class="icon medium key"></span> Login</button>
+									<button class="button green" name="Submit" type="submit"><span class="icon medium key"></span> Valider</button>
 								</div>
 							</div>
 						</form>
