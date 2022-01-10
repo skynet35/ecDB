@@ -34,19 +34,19 @@
 						$AddProj = new ProjAdd;
 						$AddProj->AddProj();
 						
-						$proj_query = mysql_query("SELECT * FROM projects WHERE project_owner= $owner");
-						if(mysql_num_rows($proj_query) == 0){
+						$proj_query = mysqli_query($link,"SELECT * FROM projects WHERE project_owner= $owner");
+						if(mysqli_num_rows($proj_query) == 0){
 							echo '<div class="message orange">To create a BOM-list (Bill Of Material) you have to first create a project. You will then be able to add your components to your project and automaticly create a BOM-list.</div>';
 						}
 					?>
 					<form class="globalForms" method="post" action="">
 						<div class="textInput">
-							<label class="keyWord">Project name</label>
+							<label class="keyWord">Nom du projet</label>
 							<div class="input"><input name="name" id="name" type="text" class="medium" /></div>
 						</div>
 						<div class="buttons">
 							<div class="input">
-								<button class="button green" name="submit" type="submit"><span class="icon medium save"></span> Add project</button>
+								<button class="button green" name="submit" type="submit"><span class="icon medium save"></span> Ajouter projet</button>
 							</div>
 						</div>
 					</form>
@@ -70,10 +70,10 @@
 								else {
 									echo 'desc';
 								}
-								?>">Name</a>
+								?>">Nom</a>
 								</th>
-								<th>Number of components</th>
-								<th>Total cost</th>
+								<th>Nombre de composants</th>
+								<th>Cout total</th>
 							</tr>
 						</thead>
 						<tbody>
