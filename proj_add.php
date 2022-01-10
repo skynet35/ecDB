@@ -25,12 +25,12 @@
 			
 			<!-- Main content -->
 			<div id="content">
-				<h1>Add Project</h1>
+				<h1>Ajouter projet</h1>
 
 				<table class="viewComponent" cellpadding="0" cellspacing="0">
 					<form action="" method="post">
 						<tr>
-							<td class="what">Name</td>
+							<td class="what">Nom</td>
 							<td><input name="name" id="name" type="text" class="textfield"" /></td>
 						</tr>
 						
