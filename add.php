@@ -5,8 +5,8 @@
 	
 	// Get some personal data. ID, currency, measurement unit
 	$owner 	= 	$_SESSION['SESS_MEMBER_ID'];
-	$GetPersonal = mysql_query("SELECT currency, measurement FROM members WHERE member_id = ".$owner."");
-	$personal = mysql_fetch_assoc($GetPersonal);
+	$GetPersonal = mysqli_query($link,"SELECT currency, measurement FROM members WHERE member_id = ".$owner."");
+	$personal = mysqli_fetch_assoc($GetPersonal);
 ?>
 <!DOCTYPE HTML> 
 <html>
@@ -80,7 +80,7 @@
 				
 				<form class="globalForms noPadding" action="" method="post" id="add">
 					<div class="textBoxInput">
-						<label class="keyWord boldText">Comment</label>
+						<label class="keyWord boldText">Commentaires</label>
 						<div class="text">
 							<textarea name="comment" rows="4"><?php if(isset($_POST['submit'])) { echo $_POST['comment']; } ?></textarea>
 						</div>
@@ -89,13 +89,13 @@
 						<tbody>
 							<tr>
 								<td class="boldText">
-									Name
+									Nom
 								</td>
 								<td>
 									<input name="name" id="name" type="text" class="medium" value="<?php if(isset($_POST['submit'])) { echo $_POST['name']; } ?>" autofocus tabindex="0"/>
 								</td>
 								<td class="boldText">
-									Category
+									Categorie
 								</td>
 								<td>
 									<select name="category">
@@ -108,7 +108,7 @@
 									</select>
 								</td>
 								<td class="boldText">
-									Quantity
+									Quantite
 								</td>
 								<td>
 									<input name="quantity" type="text" class="small" value="<?php if(isset($_POST['submit'])) { echo $_POST['quantity']; } ?>" />
@@ -116,13 +116,13 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Manufacturer
+									Fabricant
 								</td>
 								<td>
 									<input name="manufacturer" id="manufacturer" class="medium" type="text" value="<?php if(isset($_POST['submit'])) { echo $_POST['manufacturer']; } ?>" />
 								</td>
 								<td class="boldText">
-									Package
+									Empreinte
 								</td>
 								<td>
 									<input name="package" id="package" class="medium" type="text" class="small" value="<?php if(isset($_POST['submit'])) { echo $_POST['package']; } ?>" />
@@ -136,19 +136,19 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Location
+									Emplacement
 								</td>
 								<td>
 									<input name="location" id="location" class="medium" type="text" value="<?php if(isset($_POST['submit'])) { echo $_POST['location']; } ?>" />
 								</td>
 								<td class="boldText">
-									Price
+									Prix
 								</td>
 								<td>
 									<input name="price" type="text" class="small" value="<?php if(isset($_POST['submit'])) { echo $_POST['price']; } ?>" /> <?php echo $personal['currency']; ?>
 								</td>
 								<td class="boldText">
-									To order
+									A commander
 								</td>
 								<td>
 									<input name="orderquant" type="text" class="small" value="<?php if(isset($_POST['submit'])) { echo $_POST['orderquant']; } ?>" />
@@ -164,32 +164,32 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									SMD
+									CMS
 								</td>
 								<td>
 									<?php
 										if(isset($_POST['submit']) && $_POST['smd'] == 'Yes'){
-											echo '<input type="radio" name="smd" value="Yes" checked="checked" /> Yes ';
-											echo '<input type="radio" name="smd" value="No" /> No';
+											echo '<input type="radio" name="smd" value="Yes" checked="checked" /> Oui ';
+											echo '<input type="radio" name="smd" value="No" /> Non';
 										}
 										else{
-											echo '<input type="radio" name="smd" value="Yes" /> Yes ';
-											echo '<input type="radio" name="smd" value="No" checked="checked" /> No';
+											echo '<input type="radio" name="smd" value="Yes" /> Oui ';
+											echo '<input type="radio" name="smd" value="No" checked="checked" /> Non';
 										}
 									?>
 								</td>
 								<td class="boldText">
-									Scrap
+									Image
 								</td>
 								<td>
 									<?php
 										if(isset($_POST['submit']) && $_POST['scrap'] == 'Yes'){
-											echo '<input type="radio" name="scrap" value="Yes" checked="checked" /> Yes ';
+											echo '<input type="radio" name="scrap" value="Yes" checked="checked" /> Oui ';
 											echo '<input type="radio" name="scrap" value="No" /> No';
 										}
 										else{
-											echo '<input type="radio" name="scrap" value="Yes" /> Yes ';
-											echo '<input type="radio" name="scrap" value="No" checked="checked" /> No';
+											echo '<input type="radio" name="scrap" value="Yes" /> Oui ';
+											echo '<input type="radio" name="scrap" value="No" checked="checked" /> Non';
 										}
 									?>
 								</td>
@@ -199,12 +199,12 @@
 								<td>
 									<?php
 										if(isset($_POST['submit']) && $_POST['public'] == 'No'){
-											echo '<input type="radio" name="public" value="Yes" /> Yes ';
-											echo '<input type="radio" name="public" value="No" checked="checked"  /> No';
+											echo '<input type="radio" name="public" value="Yes" /> Oui ';
+											echo '<input type="radio" name="public" value="No" checked="checked"  /> Non';
 										}
 										else{
-											echo '<input type="radio" name="public" value="Yes" checked="checked" /> Yes ';
-											echo '<input type="radio" name="public" value="No" /> No';
+											echo '<input type="radio" name="public" value="Yes" checked="checked" /> Oui ';
+											echo '<input type="radio" name="public" value="No" /> Non';
 										}
 									?>
 								</td>
@@ -219,13 +219,13 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Weight
+									Poids
 								</td>
 								<td>
 									<input name="weight" type="text" class="small" value="<?php if(isset($_POST['submit'])) { echo $_POST['weight']; } ?>" /> <?php if($personal['measurement'] == 1){echo 'g';} else {echo 'g'; } ?>
 								</td>
 								<td class="boldText">
-									Width
+									Longueur
 								</td>
 								<td>
 									<input name="width" type="text" class="small" value="<?php if(isset($_POST['submit'])) { echo $_POST['width']; } ?>" /> <?php if($personal['measurement'] == 1){echo 'mm';} else {echo 'in'; } ?>
@@ -237,7 +237,7 @@
 								<td></td>
 								<td></td>
 								<td class="boldText">
-									Depth
+									Epaisseur
 								</td>
 								<td>
 									<input name="depth" type="text" class="small" value="<?php if(isset($_POST['submit'])) { echo $_POST['depth']; } ?>" /> <?php if($personal['measurement'] == 1){echo 'mm';} else {echo 'in'; } ?>
@@ -253,7 +253,7 @@
 									<input name="datasheet" type="text" class="medium" value="<?php if(isset($_POST['submit'])) { echo $_POST['datasheet']; } ?>" /> 
 								</td>
 								<td class="boldText">
-									Height
+									Hauteur
 								</td>
 								<td>
 									<input name="height" type="text" class="small" value="<?php if(isset($_POST['submit'])) { echo $_POST['height']; } ?>" /> <?php if($personal['measurement'] == 1){echo 'mm';} else {echo 'in'; } ?>
@@ -310,10 +310,10 @@
 							<tr>
 								<td></td>
 								<td  class="boldText">
-									Add component to project
+									Ajouter composant
 								</td>
 								<td  class="boldText">
-									Quantity
+									Quantite
 								</td>
 								<td></td>
 								<td></td>
@@ -322,7 +322,7 @@
 							<tr>
 								<td></td>
 								<td>
-									<select name="project">
+									<select name="projet">
 										<?php
 											include('include/include_component_add_project.php');
 											$MenuProj = new AddMenuProj;
