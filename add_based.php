@@ -7,12 +7,12 @@
 	$id 	= 	(int)$_GET['based'];
 
 	// Get data from the old component to inherit.
-	$GetDataComponent = mysql_query("SELECT * FROM data WHERE id = ".$id." AND owner = ".$owner.""); 
-	$executesql = mysql_fetch_assoc($GetDataComponent);
+	$GetDataComponent = mysqli_query($link,"SELECT * FROM data WHERE id = ".$id." AND owner = ".$owner.""); 
+	$executesql = mysqli_fetch_assoc($GetDataComponent);
 	
 	// Get some personal data. ID, currency, measurement unit
-	$GetPersonal = mysql_query("SELECT currency, measurement FROM members WHERE member_id = ".$owner.""); 
-	$personal = mysql_fetch_assoc($GetPersonal);
+	$GetPersonal = mysqli_query($link,"SELECT currency, measurement FROM members WHERE member_id = ".$owner.""); 
+	$personal = mysqli_fetch_assoc($GetPersonal);
 	
 	// If the owner of component !== $owner. Show error.
 	if ($executesql['owner'] !== $owner) {
@@ -28,19 +28,19 @@
 	}
 
 	// Get the head category name, based of the head category ID.
-	$GetHeadCatName = mysql_query("SELECT * FROM category_head WHERE id = ".$head_cat_id."");
-	$executesql_head_catname = mysql_fetch_assoc($GetHeadCatName);
+	$GetHeadCatName = mysqli_query($link,"SELECT * FROM category_head WHERE id = ".$head_cat_id."");
+	$executesql_head_catname = mysqli_fetch_assoc($GetHeadCatName);
 
 	// Sub category == $sub_cat_id
 	$sub_cat_id = $executesql['category'];
 	
 	// Get the sub category name, based of the sub category ID.
-	$GetSubCatName = mysql_query("SELECT * FROM category_sub WHERE id = ".$sub_cat_id."");
-	$executesql_sub_catname = mysql_fetch_assoc($GetSubCatName);
+	$GetSubCatName = mysqli_query($link,"SELECT * FROM category_sub WHERE id = ".$sub_cat_id."");
+	$executesql_sub_catname = mysqli_fetch_assoc($GetSubCatName);
 	
 	// Get ALL the sub categories.
 	$GetDataComponentsAll = "SELECT * FROM category_sub";
-	$sql_exec = mysql_Query($GetDataComponentsAll);
+	$sql_exec = mysqli_query($link,$GetDataComponentsAll);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv">
@@ -69,7 +69,7 @@
 			<!-- Main content -->
 			<div id="content">
 				
-				<h1>Add new component based on <a href="component.php?view=<?php echo $executesql['id']; ?>"><?php echo $executesql['name']; ?></a></h1>
+				<h1>Ajouter un nouveau composant <a href="component.php?view=<?php echo $executesql['id']; ?>"><?php echo $executesql['name']; ?></a></h1>
 				
 				<?php
 					include('include/include.php');
@@ -79,7 +79,7 @@
 				
 				<form class="globalForms noPadding" action="" method="post">
 					<div class="textBoxInput">
-						<label class="keyWord boldText">Comment</label>
+						<label class="keyWord boldText">Commentaires</label>
 						<div class="text">
 							<textarea name="comment" rows="4"><?php echo $executesql['comment']; ?></textarea>
 						</div>
@@ -88,21 +88,21 @@
 						<tbody>
 							<tr>
 								<td class="boldText">
-									Name
+									Nom
 								</td>
 								<td>
 									<input name="name" class="medium" type="text" value="<?php echo $executesql['name']; ?>" id="name" />
 								</td>
 								<td class="boldText">
-									Category
+									Categorie
 								</td>
 								<td>
 									<select name="category">
 										<?php
 											$HeadCategoryNameQuery = "SELECT * FROM category_head ORDER by name ASC";
-											$sql_exec_headcat = mysql_Query($HeadCategoryNameQuery);
+											$sql_exec_headcat = mysqli_query($link,$HeadCategoryNameQuery);
 		
-											while ($HeadCategory = mysql_fetch_array($sql_exec_headcat)) {
+											while ($HeadCategory = mysqli_fetch_array($sql_exec_headcat)) {
 												
 												echo '<option class="main_category" value="';
 												echo $HeadCategory['id'];
@@ -114,9 +114,9 @@
 												$subcatto = $subcatfrom + 99;
 												
 												$SubCategoryNameQuery = "SELECT * FROM category_sub WHERE id BETWEEN ".$subcatfrom." AND ".$subcatto." ORDER by name ASC";
-												$sql_exec_subcat = mysql_Query($SubCategoryNameQuery);
+												$sql_exec_subcat = mysqli_query($link,$SubCategoryNameQuery);
 												
-												while ($SubCategory = mysql_fetch_array($sql_exec_subcat)) {
+												while ($SubCategory = mysqli_fetch_array($sql_exec_subcat)) {
 													echo '<option value="';
 													echo $SubCategory['id'];
 													echo '"';
@@ -132,7 +132,7 @@
 									</select>
 								</td>
 								<td class="boldText">
-									Quantity
+									Quantite
 								</td>
 								<td>
 									<input name="quantity" type="text" class="small" value="<?php echo $executesql['quantity']; ?>" id="quantity" />
@@ -140,13 +140,13 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Manufacturer
+									Fabricant
 								</td>
 								<td>
 									<input name="manufacturer" class="medium" type="text" value="<?php echo $executesql['manufacturer']; ?>" />
 								</td>
 								<td class="boldText">
-									Package
+									Empreinte
 								</td>
 								<td>
 									<input name="package" class="medium" type="text" value="<?php echo $executesql['package']; ?>" />
@@ -160,19 +160,19 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Location
+									Emplacement
 								</td>
 								<td>
 									<input name="location" type="text" class="medium" value="<?php echo $executesql['location']; ?>" id="location" />
 								</td>
 								<td class="boldText">
-									Price
+									Prix
 								</td>
 								<td>
 									<input name="price" type="text" class="small" value="<?php echo $executesql['price']; ?>" id="price" /> <?php echo $personal['currency']; ?>
 								</td>
 								<td class="boldText">
-									To order
+									A commander
 								</td>
 								<td>
 									<input name="orderquant" type="text" class="small" value="<?php echo $executesql['order_quantity']; ?>" id="orderquant" />
@@ -188,32 +188,32 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									SMD
+									CMS
 								</td>
 								<td>
 									<?php
 										if($executesql['smd'] == 'Yes'){
-											echo '<input type="radio" name="smd" value="Yes" checked="checked" /> Yes ';
-											echo '<input type="radio" name="smd" value="No" /> No';
+											echo '<input type="radio" name="smd" value="Yes" checked="checked" /> Oui ';
+											echo '<input type="radio" name="smd" value="No" /> Non';
 										}
 										else{
-											echo '<input type="radio" name="smd" value="Yes" /> Yes ';
-											echo '<input type="radio" name="smd" value="No" checked="checked" /> No';
+											echo '<input type="radio" name="smd" value="Yes" /> Oui ';
+											echo '<input type="radio" name="smd" value="No" checked="checked" /> Non';
 										}
 									?>
 								</td>
 								<td class="boldText">
-									Scrap
+									Image
 								</td>
 								<td>
 									<?php
 										if($executesql['scrap'] == 'Yes'){
-											echo '<input type="radio" name="scrap" value="Yes" checked="checked" /> Yes ';
-											echo '<input type="radio" name="scrap" value="No" /> No';
+											echo '<input type="radio" name="scrap" value="Yes" checked="checked" /> Oui ';
+											echo '<input type="radio" name="scrap" value="No" /> Non';
 										}
 										else{
-											echo '<input type="radio" name="scrap" value="Yes" /> Yes ';
-											echo '<input type="radio" name="scrap" value="No" checked="checked" /> No';
+											echo '<input type="radio" name="scrap" value="Yes" /> Oui ';
+											echo '<input type="radio" name="scrap" value="No" checked="checked" /> Non';
 										}
 									?>
 								</td>
@@ -223,12 +223,12 @@
 								<td>
 									<?php
 										if($executesql['public'] == 'Yes'){
-											echo '<input type="radio" name="public" value="Yes" checked="checked" /> Yes ';
-											echo '<input type="radio" name="public" value="No" /> No';
+											echo '<input type="radio" name="public" value="Yes" checked="checked" /> Oui ';
+											echo '<input type="radio" name="public" value="No" /> Non';
 										}
 										else{
-											echo '<input type="radio" name="public" value="Yes" /> Yes ';
-											echo '<input type="radio" name="public" value="No" checked="checked" /> No';
+											echo '<input type="radio" name="public" value="Yes" /> Oui ';
+											echo '<input type="radio" name="public" value="No" checked="checked" /> Non';
 										}
 									?>
 								</td>
@@ -243,13 +243,13 @@
 							</tr>
 							<tr>
 								<td class="boldText">
-									Weight
+									Poids
 								</td>
 								<td>
 									<input name="weight" type="text" class="small" value="<?php echo $executesql['weight']; ?>" /> <?php if($personal['measurement'] == 1){echo 'g';} else {echo 'g'; } ?>
 								</td>
 								<td class="boldText">
-									Width
+									Longueur
 								</td>
 								<td>
 									<input name="width" type="text" class="small" value="<?php echo $executesql['width']; ?>" /> <?php if($personal['measurement'] == 1){echo 'mm';} else {echo 'in'; } ?>
@@ -260,7 +260,7 @@
 								<td></td>
 								<td></td>
 								<td class="boldText">
-									Depth
+									Epaisseur
 								</td>
 								<td>
 									<input name="depth" type="text" class="small" value="<?php echo $executesql['depth']; ?>" /> <?php if($personal['measurement'] == 1){echo 'mm';} else {echo 'in'; } ?>
@@ -276,7 +276,7 @@
 									<input name="datasheet" type="text" class="medium" value="<?php echo $executesql['datasheet']; ?>" />
 								</td>
 								<td class="boldText">
-									Height
+									Hauteur
 								</td>
 								<td>
 									<input name="height" type="text" class="small" value="<?php echo $executesql['height']; ?>" /> <?php if($personal['measurement'] == 1){echo 'mm';} else {echo 'in'; } ?>
@@ -332,10 +332,10 @@
 							<tr>
 								<td></td>
 								<td  class="boldText">
-									Add component to project
+									Ajouter composant au projet
 								</td>
 								<td  class="boldText">
-									Quantity
+									Quantite
 								</td>
 								<td></td>
 								<td></td>
@@ -363,7 +363,7 @@
 					</table>
 					<div class="buttons">
 						<div class="input">
-							<button class="button green" name="submit" type="submit"><span class="icon medium save"></span> Save</button>
+							<button class="button green" name="submit" type="submit"><span class="icon medium save"></span> Sauver</button>
 						</div>
 					</div>
 				</form>
