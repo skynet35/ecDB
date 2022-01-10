@@ -1,41 +1,43 @@
 ﻿README
 ====
+## Modification de ecDB en francais
+Modification de plusieurs fichiers, adaptés en francais, et mysqli
 
 ## ecDB and PartsBox
 
-ecDB, or Electronics Component DataBase, is a project that was created by [Nils Fredriksson](http://nilsf.se) aka. ElectricMan, and designed by [Buildlog](http://buildlog.se).
+ecDB, ou Electronics Component DataBase, est un projet créé par [Nils Fredriksson](http://nilsf.se) aka. ElectricMan, et conçu avec [Buildlog](http://buildlog.se).
 
-In May 2018 ecDB.net was acquired by PartsBox (https://partsbox.io/) and users of the online ecDB service were offered to upgrade/migrate their data.
+En mai  ecDB.net est acheté par la société partsbox.com et les utilisateurs du service ecDB ont été invités a migrer vers une nouvelle solution.
 
-PartsBox is an online app that lets you take control of your electronic parts inventory, BOM pricing, and small-scale production. It keeps track of where components are stored, what the current stock levels are, and which components are used in which projects/BOMs. PartsBox significantly expands what ecDB offered, with lots of new features and a blazingly fast parts search. It is available commercially (with features like BOM pricing, barcode scanning, sub-assemblies, file uploads and lots more), but there is also a free hobbyist/maker version, with everything the hobbyist needs.
-
-PartsBox lets you export everything you entered, anytime. Data export is a fundamental feature: export a JSON data file with a single click.
+PartsBox est une application en ligne qui vous permet de contrôler votre inventaire de pièces électroniques, la tarification de la nomenclature et la production à petite échelle. Il permet de savoir où les composants sont stockés, quels sont les niveaux de stock actuels et quels composants sont utilisés dans quels projets/BOM. PartsBox étend considérablement ce que propose ecDB, avec de nombreuses nouvelles fonctionnalités et une recherche de pièces incroyablement rapide. Il est disponible dans le commerce (avec des fonctionnalités telles que la tarification des nomenclatures, la lecture de codes-barres, les sous-ensembles, les téléchargements de fichiers et bien plus encore), mais il existe également une version gratuite pour les amateurs/fabricants, avec tout ce dont les amateurs ont besoin.
 
 ## ecDB Source Code
 
-While the ownership of ecDB was transferred to PartsBox, there is no intention of pulling the code from the Internet. It will continue to remain freely available for anyone that wishes to build on it, or run their own ecDB instance. This repository will remain public and accessible.
+Bien que la propriété d'ecDB ait été transférée à PartsBox, il n'y a aucune intention d'extraire le code d'Internet. Il continuera à rester disponible gratuitement pour toute personne souhaitant s'appuyer dessus ou exécuter sa propre instance ecDB. Ce référentiel restera public et accessible.
 
 ## Support
 
-Please note that this code is unsupported. Please do not try to file issues or issue pull requests, as we have no resources to deal with them.
+Veuillez noter que ce code n'est pas pris en charge. N'essayez pas de signaler des problèmes ou d'émettre des demandes d'extraction, car nous n'avons aucune ressource pour les traiter.
 
 ## Documentation
 
-Currently there is no documentation available. Please feel free to create it!
+Actuellement, il n'y a pas de documentation disponible. N'hésitez pas à le créer !
 
 ## Installation
 
-- Check out the git repository.
-- Create a MySQL database.
-- Import `ecdb_databse.sql` database structure to your MySQL-database.
-- Insert your MySQL data in the configuration file, `include/mysql_connect.php`.
-- **You are now set to go!** The default username is `demo` and password `demo`.
+- Consultez le référentiel git.
+- Créez une base MySQL.
+- Importez `ecdb_databse.sql` dans votre structure MySQL-database.
+- Inserez vos données MySQL dans le fichier de cofiguration, `include/mysql_connect.php` et 'include/login'.
+- **Maintenant vous etes prêt a démarrer**.
+- Pour enregistrer un utilisateur, tappez: http://nom_de_domaine/register.php
+J'ai désactivé l'affichage de la page enregistrement de base. Si vous voulez quelle soit afficher tout le temps, allez dans le fichier 'login.php', et enlever "cotes" de la ligne <!--<li><a href="register.php"><span class="icon medium user"></span> S'enregistrer</a></li>-->
 
 ### Requirements
 
 -  Web Server.
--  PHP Version 5.2.4 or above.
--  MySQL Version 5.0 or above.
+-  PHP Version 5.2.4 et suppérieur.
+-  MySQL Version 5.0 et suppérieur.
 
 ## License
 
