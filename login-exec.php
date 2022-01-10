@@ -14,13 +14,13 @@
 	//Connect to mysql server
 	$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	if(!$link) {
-		die('Failed to connect to server: ' . mysqli_error($link));
+		die('Impossible de se connecter au serveur ' . mysqli_error($link));
 	}
 	
 	//Select database
 	$db = mysqli_select_db($link, DB_DATABASE);
 	if(!$db) {
-		die("Unable to select database");
+		die("Impossible de se connecter a la base");
 	}
 	
 	//Function to sanitize values received from the form. Prevents SQL injection
@@ -38,11 +38,11 @@
 
 	//Input Validations
 	if($login == '') {
-		$errmsg_arr[] = 'Login ID missing';
+		$errmsg_arr[] = 'Mauvais identifiant';
 		$errflag = true;
 	}
 	if($password == '') {
-		$errmsg_arr[] = 'Password missing';
+		$errmsg_arr[] = 'Mauvais mot de pass';
 		$errflag = true;
 	}
 	
@@ -73,7 +73,7 @@
 			header("location: index.php");
 			exit();
 		}else {
-                        print('Am here');
+                        print('Je suis en ligne');
 			//Login failed
 			//header("location: login-failed.php");
 			exit();
