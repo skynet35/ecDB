@@ -55,7 +55,7 @@
 								else {
 									echo 'desc';
 								}
-								?>">Name</a>
+								?>">Nom</a>
 							</th>
 							<th>
 								<a href="?by=category&order=<?php 
@@ -71,7 +71,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Category</a>
+								?>">Categorie</a>
 							</th>
 							<th>
 								<a href="?by=package&order=<?php 
@@ -87,7 +87,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Package</a>
+								?>">Empreinte</a>
 							</th>
 							<th>
 								<a href="?by=pins&order=<?php 
@@ -124,7 +124,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">SMD</a>
+								?>">CMS</a>
 							</th>
 							<th>
 								<a href="?by=price&order=<?php 
@@ -140,7 +140,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Price</a>
+								?>">Prix</a>
 							</th>
 							<th>
 								<a href="?by=quantity&order=<?php 
@@ -156,10 +156,10 @@
 								else {
 									echo 'asc';
 								}
-								?>">Quantity</a>
+								?>">Quantite</a>
 							</th>
 							<th>
-								Comment
+								Commentaire
 							</th>
 						</tr>
 					</thead>
