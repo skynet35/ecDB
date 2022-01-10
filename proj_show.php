@@ -14,12 +14,12 @@
 		<meta name="description" content="BOM-list for project <?php
 							// Visar projektets namn.
 							include('include/mysql_connect.php');
-							$project_id = mysql_real_escape_string($_GET["proj_id"]);
+							$project_id = mysqli_real_escape_string($link,$_GET["proj_id"]);
 							$owner = $_SESSION['SESS_MEMBER_ID'];
 							
-							$result = mysql_query("SELECT project_name FROM projects WHERE project_owner = ".$owner." AND project_id = ".$project_id."");
+							$result = mysqli_query($link,"SELECT project_name FROM projects WHERE project_owner = ".$owner." AND project_id = ".$project_id."");
 
-							while($row = mysql_fetch_array($result))
+							while($row = mysqli_fetch_array($result))
 							{
 								echo $row['project_name'];
 							}
@@ -27,15 +27,15 @@
 		<meta name="keywords" content="electronics, components, database, project, inventory"/> 
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link rel="apple-touch-icon" href="img/apple.png" />
-		<title>Viewing project - <?php
+		<title>Voir projets - <?php
 							// Visar projektets namn.
 							include('include/mysql_connect.php');
-							$project_id = mysql_real_escape_string($_GET["proj_id"]);
+							$project_id = mysqli_real_escape_string($link,$_GET["proj_id"]);
 							$owner = $_SESSION['SESS_MEMBER_ID'];
 							
-							$result = mysql_query("SELECT project_name FROM projects WHERE project_owner = ".$owner." AND project_id = ".$project_id."");
+							$result = mysqli_query($link,"SELECT project_name FROM projects WHERE project_owner = ".$owner." AND project_id = ".$project_id."");
 
-							while($row = mysql_fetch_array($result))
+							while($row = mysqli_fetch_array($result))
 							{
 								echo $row['project_name'];
 							}
@@ -53,16 +53,16 @@
 			<!-- END -->
 			<!-- Main content -->
 				<div id="content">
-					<h1>Viewing project 
+					<h1>Voir projets 
 						<?php
 							// Visar projektets namn.
 							include('include/mysql_connect.php');
-							$project_id = mysql_real_escape_string($_GET["proj_id"]);
+							$project_id = mysqli_real_escape_string($link,$_GET["proj_id"]);
 							$owner = $_SESSION['SESS_MEMBER_ID'];
 							
-							$result = mysql_query("SELECT project_name FROM projects WHERE project_owner = ".$owner." AND project_id = ".$project_id."");
+							$result = mysqli_query($link,"SELECT project_name FROM projects WHERE project_owner = ".$owner." AND project_id = ".$project_id."");
 
-							while($row = mysql_fetch_array($result))
+							while($row = mysqli_fetch_array($result))
 							{
 								echo "<strong>";
 								echo $row['project_name'];
@@ -89,7 +89,7 @@
 										else {
 											echo 'desc';
 										}
-									?>">Name</a>
+									?>">Nom</a>
 								</th>
 								<th>
 									<a href="?proj_id=<?php echo $project_id; ?>&by=category&order=<?php 
@@ -105,7 +105,7 @@
 										else {
 											echo 'asc';
 										}
-									?>">Category</a>
+									?>">Categorie</a>
 								</th>
 								<th>
 									<a href="?proj_id=<?php echo $project_id; ?>&by=manufacturer&order=<?php 
@@ -121,7 +121,7 @@
 										else {
 											echo 'asc';
 										}
-									?>">Manufacturer</a>
+									?>">Fabricant</a>
 								</th>
 								<th>
 									<a href="?proj_id=<?php echo $project_id; ?>&by=package&order=<?php 
@@ -137,7 +137,7 @@
 										else {
 											echo 'asc';
 										}
-									?>">Package</a>
+									?>">Empreinte</a>
 								</th>
 								<th>
 									<a href="?proj_id=<?php echo $project_id; ?>&by=smd&order=<?php 
@@ -152,7 +152,7 @@
 										else {
 											echo 'asc';
 										}
-									?>">SMD</a>
+									?>">CMS</a>
 								</th>
 								<th>
 									<a href="?proj_id=<?php echo $project_id; ?>&by=price&order=<?php 
@@ -168,7 +168,7 @@
 										else {
 											echo 'asc';
 										}
-									?>">Price</a>
+									?>">Prix</a>
 								</th>
 								<th>
 									<a href="?proj_id=<?php echo $project_id; ?>&by=quantity&order=<?php 
@@ -184,7 +184,7 @@
 										else {
 											echo 'asc';
 										}
-									?>">Quantity in stock</a>
+									?>">Quantite en stock</a>
 								</th>
 								<th>
 									<a href="?proj_id=<?php echo $project_id; ?>&by=quantity&order=<?php 
@@ -200,7 +200,7 @@
 										else {
 											echo 'asc';
 										}
-									?>">Quantity in project</a>
+									?>">Quantite pour le projet</a>
 								</th>
 							</tr>
 						</thead>
