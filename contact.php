@@ -39,8 +39,8 @@
 			<div id="content">
 				<div class="loginWrapper">
 					<div class="left">
-						<h1>Contact us</h1>
-						If you have any suggestions, questions or what not. Send us an email to info@ecdb.net
+						<h1>Contactez nous</h1>
+						Si vous avez des suggestions, questions ou autre : info@ecdb.net (Anglais)
 					</div>
 					<div class="right"></div>
 				</div>
