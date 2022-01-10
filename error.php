@@ -6,20 +6,20 @@
 		$id = (int)$_GET['id'];
 		
 		if ($id == 1) {
-			$message = "You don't have permission to view this component.";
+			$message = "Vous n'avez pas la permission de voir ce composant.";
 		}
 		elseif ($id == 2) {
-			$message = "You don't have permission to edit this component.";
+			$message = "Vous n'avez pas la permission d'éditer ce composant.";
 		}
 		elseif ($id == 3) {
-			$message = "Oh crap! Something broke...";
+			$message = "Oups !!";
 		}
 		else {
 			$message = "";
 		}
 	}
 	if (empty($_GET['id'])) {
-		$message = 'Error!';
+		$message = 'Erreur!';
 	}
 ?>
 <!DOCTYPE HTML> 
