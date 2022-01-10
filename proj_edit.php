@@ -6,15 +6,15 @@
 	$owner 	= 	$_SESSION['SESS_MEMBER_ID'];
 	$id 	= 	(int)$_GET['proj_id'];
 	
-	$GetDataProjectName = mysql_query("SELECT * FROM projects WHERE project_id = ".$id." AND project_owner = ".$owner."");
-	$executesql = mysql_fetch_assoc($GetDataProjectName);
+	$GetDataProjectName = mysqli_query($link,"SELECT * FROM projects WHERE project_id = ".$id." AND project_owner = ".$owner."");
+	$executesql = mysqli_fetch_assoc($GetDataProjectName);
 	
 	if(isset($_POST['delete'])) {
 		$sqlDeleteProject = "DELETE FROM projects WHERE project_id = ".$id." ";
-		$sql_exec_component_delete = mysql_query($sqlDeleteProject);
+		$sql_exec_component_delete = mysqli_query($link,$sqlDeleteProject);
 
 		$sqlDeleteProject = "DELETE FROM projects_data WHERE projects_data_project_id = ".$id." ";
-		$sql_exec_project_delete = mysql_query($sqlDeleteProject);
+		$sql_exec_project_delete = mysqli_query($link,$sqlDeleteProject);
 
 		header("Location: .");
 	}
@@ -44,7 +44,7 @@
 			
 			<!-- Main content -->
 				<div id="content">
-					<h1>Edit Project</h1>
+					<h1>Editer Projet</h1>
 					
 					<?php
 						include('include/include_proj_update.php');
@@ -54,13 +54,13 @@
 					
 					<form class="globalForms" method="post" action="">
 						<div class="textInput">
-							<label class="keyWord">Project name</label>
+							<label class="keyWord">Nom du projet</label>
 							<div class="input"><input name="name" type="text" class="medium" value="<?php echo $executesql['project_name']; ?>" /></div>
 						</div>
 						<div class="buttons">
 							<div class="input">
-								<button class="button green" name="submit" type="submit"><span class="icon medium save"></span> Save</button>
-								<button class="button red" name="delete" type="submit"><span class="icon medium trash"></span> Delete</button>
+								<button class="button green" name="submit" type="submit"><span class="icon medium save"></span> Sauver</button>
+								<button class="button red" name="delete" type="submit"><span class="icon medium trash"></span> Supprimer</button>
 							</div>
 						</div>
 					</form>
