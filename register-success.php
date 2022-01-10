@@ -29,10 +29,8 @@
 			<!-- Main menu -->
 			<div id="menu">
 				<ul>
-					<li><a href="."><span class="icon medium key"></span> Login</a></li>
-					<li><a href="register.php" class="selected"><span class="icon medium user"></span> Register</a></li>
-					<li><a href="about.php"><span class="icon medium document"></span> About</a></li>
-					<li><a href="/blog"><span class="icon medium docLinesStright"></span> Blog</a></li>
+					<li><a href="."><span class="icon medium key"></span> Connexion</a></li>
+					<li><a href="register.php" class="selected"><span class="icon medium user"></span> S'enregistrer</a></li>
 				</ul>
 			</div>
 			<!-- END -->
@@ -40,18 +38,18 @@
 			<!-- Main content -->
 			<div id="content">
 				
-				<h1>Registration success</h1>
+				<h1>Enresitrement réussi</h1>
 				
-				<b>Please login</b><br /><br />
+				<b>S'enregistrer</b><br /><br />
 				
 				<form id="loginForm" name="loginForm" method="post" action="login-exec.php">
 					<table width="300" border="0" align="center" cellpadding="2" cellspacing="0">
 						<tr>
-							<td width="112">Login</td>
+							<td width="112">Identifiant</td>
 							<td width="188"><input name="login" type="text" class="textfield" id="login" /></td>
 						</tr>
 						<tr>
-							<td>Password</td>
+							<td>Mot de pass</td>
 							<td><input name="password" type="password" class="textfield" id="password" /></td>
 						</tr>
 						<tr>
