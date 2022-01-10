@@ -46,7 +46,7 @@
 								else {
 									echo 'desc';
 								}
-								?>">Name</a>
+								?>">Nom</a>
 								</th>
 								<th><a href="?by=manufacturer&order=<?php 
 								if(isset($_GET['order'])){
@@ -61,7 +61,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Manufacturer</a>
+								?>">Fabricant</a>
 								</th>
 								<th><a href="?by=package&order=<?php 
 								if(isset($_GET['order'])){
@@ -76,7 +76,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Package</a>
+								?>">Empreinte</a>
 								</th>
 								<th><a href="?by=smd&order=<?php 
 								if(isset($_GET['order'])){
@@ -90,7 +90,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">SMD</a>
+								?>">CMS</a>
 								</th>
 								<th><a href="?by=price&order=<?php 
 								if(isset($_GET['order'])){
@@ -105,7 +105,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Price</a>
+								?>">Prix</a>
 								</th>
 								<th><a href="?by=quantity&order=<?php 
 								if(isset($_GET['order'])){
@@ -120,7 +120,7 @@
 								else {
 									echo 'asc';
 								}
-								?>">Quantity</a>
+								?>">Quantite</a>
 								</th>
 								<th><a href="?by=quantity_order&order=<?php 
 								if(isset($_GET['quantity_order'])){
@@ -135,10 +135,10 @@
 								else {
 									echo 'asc';
 								}
-								?>">Quantity to order</a>
+								?>">Quantite a commander</a>
 								</th>
 								<th>
-									Comment
+									Commentaires
 								</th>
 							</tr>
 						</thead>
