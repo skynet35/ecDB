@@ -30,15 +30,15 @@
 			
 			<!-- Main content -->
 			<div id="content">
-				<h1>Public Components</h1>
+				<h1>Composants Public</h1>
 				
 				<div class="message orange">
-					When you add a component there is a button called "public". If you choose to set that to yes, it means that other people can see that you own that component.<br /><br />
+					Lorsque vous ajoutez un composant, il ya un bouton appelé "public". Si vous selectionnez "oui", cela signifie que d'autres personnes peuvent voir que vous possédez ce composant. <br /><br />
 					
-					The thought with that setting is, for example; You are building a project and missed to order one component, to skip expensive shipping costs, long shipping time etc. you just make a quick search on ecDB for that component and contact the owner. Hopefully he is kind enough to send you that component quickly for a small charge.
+					L'idée de ce paramètre est de, par exemple: Vous construisez un projet et ne voulez pas passer une commande pour un composant, pour éviter un coûts élevés d'expédition, un délais, etc. vous faite une recherche rapide sur ECDB pour ce composant et contacter le propriétaire. S'il est assez aimable, il pourra vous envoyer ce composant rapidement avec un petit supplément (prix d'un timbre).
 				</div>
 				
-				<h1>This function is under development...</h1>
+				<h1>En cours de développement</h1>
 			</div>
 			<!-- END -->
 			<!-- Text outside the main content -->
