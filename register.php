@@ -28,10 +28,9 @@
 			<!-- Main menu -->
 			<div id="menu">
 				<ul>
-					<li><a href="index.php"><span class="icon medium key"></span> Login</a></li>
-					<li><a class="selected"><span class="icon medium user"></span> Register</a></li>
-					<li><a href="about.php"><span class="icon medium document"></span> About</a></li>
-					<li><a href="/blog"><span class="icon medium docLinesStright"></span> Blog</a></li>
+					<li><a href="index.php"><span class="icon medium key"></span> Connexion</a></li>
+					<li><a class="selected"><span class="icon medium user"></span> S'enregistrer</a></li>
+					<li><a href="about.php"><span class="icon medium document"></span> A propos</a></li>
 				</ul>
 			</div>
 			<!-- END -->
@@ -54,23 +53,23 @@
 				<div class="loginWrapper">
 					<div class="left">
 						<div class="aboutECDB">
-							You want to build something and need some components for your project. 
-							You don't know if you have those components, or where they are.
-							This is a problem many of us recognise. 
-							We want to change that for you by making a online inventory system for your electronic components that is easy to use. 
-							Add your components. Search to find it, and then use it!
+							Vous voulez construire quelque chose et avez besoin de quelques composants pour votre projet. 
+							Vous ne savez pas si vous avez ces composants, ou là où ils sont.
+							C'est un problème que beaucoup d'entre nous reconnaîssons.  
+							Nous voulons changer cela pour vous en faisant un système d'inventaire en ligne pour vos composants électroniques,et facile à utiliser.  
+							Ajouter vos composants. Recherchez puis trouver le, et ensuite utilisez le!
 						</div>
 						<form class="globalForms" name="loginForm" method="post" action="register-exec.php">
 							<div class="textInput">
-								<label class="keyWord">First name</label>
+								<label class="keyWord">Prenom</label>
 								<div class="input"><input name="fname" type="text" class="medium" id="fname" /></div>
 							</div>
 							<div class="textInput">
-								<label class="keyWord">Last name</label>
+								<label class="keyWord">Nom</label>
 								<div class="input"><input name="lname" type="text" class="medium" id="lname" /></div>
 							</div>
 							<div class="textInput">
-								<label class="keyWord">Username</label>
+								<label class="keyWord">Nom d'utilisateur</label>
 								<div class="input"><input name="login" type="text" class="medium" id="login" /></div>
 							</div>
 							<div class="textInput">
@@ -78,17 +77,17 @@
 								<div class="input"><input name="mail" type="text" class="medium" id="mail" /></div>
 							</div>
 							<div class="textInput">
-								<label class="keyWord">Password</label>
+								<label class="keyWord">Mot de pass</label>
 								<div class="input"><input name="password" type="password" class="medium" id="password" /></div>
 							</div>
 							<div class="textInput">
-								<label class="keyWord">Repeat password</label>
+								<label class="keyWord">Répétez mot de pass</label>
 								<div class="input"><input name="cpassword" type="password" class="medium" id="cpassword" onpaste="return false;" /></div>
 							</div>
 							<div class="buttons">
-								By registering you accept the <a href="terms.php">Terms and Contidions.</a><br><br>
+								En vous enregistrant, vous acceptez les <a href="terms.php">Contidions</a><br><br>
 								<div class="input">
-									<button class="button green" name="Submit" type="submit">Register</button>
+									<button class="button green" name="Submit" type="submit">Enregistrer</button>
 								</div>
 							</div>
 						</form>
