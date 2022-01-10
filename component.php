@@ -6,11 +6,11 @@
 	$owner 	= 	$_SESSION['SESS_MEMBER_ID'];
 	$id 	= 	(int)$_GET['view'];
 
-	$GetDataComponent = mysql_query("SELECT * FROM data WHERE id = ".$id." AND owner = ".$owner."");
-	$executesql = mysql_fetch_assoc($GetDataComponent);
+	$GetDataComponent = mysqli_query($link,"SELECT * FROM data WHERE id = ".$id." AND owner = ".$owner."");
+	$executesql = mysqli_fetch_assoc($GetDataComponent);
 
-	$GetPersonal = mysql_query("SELECT currency, measurement FROM members WHERE member_id = ".$owner."");
-	$personal = mysql_fetch_assoc($GetPersonal);
+	$GetPersonal = mysqli_query($link,"SELECT currency, measurement FROM members WHERE member_id = ".$owner."");
+	$personal = mysqli_fetch_assoc($GetPersonal);
 
 	if ($executesql['owner'] !== $owner) {
 		header("Location: error.php?id=1");
@@ -23,13 +23,13 @@
 		$head_cat_id = substr($executesql['category'], -4, 2);
 	}
 
-	$GetHeadCatName = mysql_query("SELECT * FROM category_head WHERE id = ".$head_cat_id."");
-	$executesql_head_catname = mysql_fetch_assoc($GetHeadCatName);
+	$GetHeadCatName = mysqli_query($link,"SELECT * FROM category_head WHERE id = ".$head_cat_id."");
+	$executesql_head_catname = mysqli_fetch_assoc($GetHeadCatName);
 
 	$sub_cat_id = $executesql['category'];
 
-	$GetSubCatName = mysql_query("SELECT * FROM category_sub WHERE id = ".$sub_cat_id."");
-	$executesql_sub_catname = mysql_fetch_assoc($GetSubCatName);
+	$GetSubCatName = mysqli_query($link,"SELECT * FROM category_sub WHERE id = ".$sub_cat_id."");
+	$executesql_sub_catname = mysqli_fetch_assoc($GetSubCatName);
 
 	if(isset($_POST['edit'])) {
 		header("Location: edit_component.php?edit=$id");
@@ -37,10 +37,10 @@
 
 	if(isset($_POST['delete'])) {
 		$sqlDeleteComopnent = "DELETE FROM data WHERE id = ".$id." ";
-		$sql_exec_component_delete = mysql_query($sqlDeleteComopnent);
+		$sql_exec_component_delete = mysqli_query($link,$sqlDeleteComopnent);
 
 		$sqlDeleteProject = "DELETE FROM projects_data WHERE projects_data_component_id = '$id'";
-		$sql_exec_project_delete = mysql_query($sqlDeleteProject);
+		$sql_exec_project_delete = mysqli_query($link,$sqlDeleteProject);
 
 		header("Location: .");
 	}
@@ -54,7 +54,7 @@
 		$quantity_after		= 	$quantity_before + 1;
 
 		$sql = "UPDATE data SET quantity = '".$quantity_after."' WHERE id = ".$id." ";
-		$sql_exec = mysql_query($sql);
+		$sql_exec = mysqli_query($link,$sql);
 		header("location: " . $_SERVER['REQUEST_URI']);
 	}
 
@@ -63,7 +63,7 @@
 		$quantity_after 	= 	$quantity_before - 1;
 
 		$sql = "UPDATE data SET quantity = '".$quantity_after."' WHERE id = ".$id." ";
-		$sql_exec = mysql_query($sql);
+		$sql_exec = mysqli_query($link,$sql);
 		header("location: " . $_SERVER['REQUEST_URI']);
 	}
 
@@ -72,7 +72,7 @@
 		$quantity_after		= 	$quantity_before + 1;
 
 		$sql = "UPDATE data SET order_quantity = '".$quantity_after."' WHERE id = ".$id." ";
-		$sql_exec = mysql_query($sql);
+		$sql_exec = mysqli_query($link,$sql);
 		header("location: " . $_SERVER['REQUEST_URI']);
 	}
 
@@ -81,7 +81,7 @@
 		$quantity_after 	= 	$quantity_before - 1;
 
 		$sql = "UPDATE data SET order_quantity = '".$quantity_after."' WHERE id = ".$id." ";
-		$sql_exec = mysql_query($sql);
+		$sql_exec = mysqli_query($link,$sql);
 		header("location: " . $_SERVER['REQUEST_URI']);
 	}
 ?>
@@ -192,7 +192,7 @@
 					<table class="globalTables leftAlign noHover" cellpadding="0" cellspacing="0">
 						<tbody>
 							<tr>
-								<td class="boldText">Location</td>
+								<td class="boldText">Emplacement</td>
 								<td>
 									<?php
 										if ($executesql['location'] == "") {
@@ -209,7 +209,7 @@
 								<td></td>
 							</tr>
 							<tr>
-								<td class="boldText">Quantity</td>
+								<td class="boldText">Quantite</td>
 								<td>
 									<?php
 										if ($executesql['quantity'] == "") {
@@ -224,7 +224,7 @@
 										<button class="button white small" name="quantity_decrease" type="submit"><span class="icon medium roundMinus"></span></button>
 									</form>
 								</td>
-								<td class="boldText">Price</td>
+								<td class="boldText">Prix</td>
 								<td>
 									<?php
 										if ($executesql['price'] == "") {
@@ -237,7 +237,7 @@
 										}
 									?>
 								</td>
-								<td class="boldText">Order quantity</td>
+								<td class="boldText">Quantite a commander</td>
 								<td>
 									<?php
 										if ($executesql['order_quantity'] == "") {
@@ -254,7 +254,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="boldText">Manufacturer</td>
+								<td class="boldText">Fabricant</td>
 								<td>
 									<?php
 										if ($executesql['manufacturer'] == "") {
@@ -265,7 +265,7 @@
 										}
 									?>
 								</td>
-								<td class="boldText">Package</td>
+								<td class="boldText">Empreinte</td>
 								<td>
 									<?php
 										if ($executesql['package'] == "") {
@@ -289,7 +289,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="boldText">SMD</td>
+								<td class="boldText">CMS</td>
 								<td>
 									<?php
 										if ($executesql['smd'] == "Yes") {
@@ -300,7 +300,7 @@
 										}
 									?>
 								</td>
-								<td class="boldText">Scrap</td>
+								<td class="boldText">Image</td>
 								<td>
 									<?php
 										if ($executesql['scrap'] == "Yes") {
@@ -324,7 +324,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="boldText">Width</td>
+								<td class="boldText">Longeur</td>
 								<td>
 									<?php
 										if ($executesql['width'] == "") {
@@ -341,7 +341,7 @@
 										}
 									?>
 								</td>
-								<td class="boldText">Weight</td>
+								<td class="boldText">Poids</td>
 								<td>
 									<?php
 										if ($executesql['weight'] == "") {
@@ -362,7 +362,7 @@
 								<td></td>
 							</tr>
 							<tr>
-								<td class="boldText">Depth</td>
+								<td class="boldText">Epaisseur</td>
 								<td>
 									<?php
 										if ($executesql['depth'] == "") {
@@ -386,7 +386,7 @@
 								<td></td>
 							</tr>
 							<tr>
-								<td class="boldText">Height</td>
+								<td class="boldText">Hauteur</td>
 								<td>
 									<?php
 										if ($executesql['height'] == "") {
@@ -435,9 +435,9 @@
 				<form class="globalForms noPadding" method="post" action="">
 					<div class="buttons">
 						<div class="input">
-							<button class="button" name="edit" type="submit"><span class="icon medium pencil"></span> Edit Component</button>
-							<button class="button" name="based" type="submit"><span class="icon medium sqPlus"></span> New based on this</button>
-							<button class="button red" name="delete" type="submit"><span class="icon medium trash"></span> Delete component</button>
+							<button class="button" name="edit" type="submit"><span class="icon medium pencil"></span> Editer Composant</button>
+							<button class="button" name="based" type="submit"><span class="icon medium sqPlus"></span> Nouvelle base</button>
+							<button class="button red" name="delete" type="submit"><span class="icon medium trash"></span> Supprimer composant</button>
 						</div>
 					</div>
 				</form>
