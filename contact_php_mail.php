@@ -114,8 +114,8 @@ if(isset($_POST['submit'])) {
 			?>
 			<!-- Main content -->
 			<div id="content">
-				<h1>Contact us</h1>
-				If you have a suggestion for ecDB please use this form to let us know about it!<br /><br />
+				<h1>Contactez nous</h1>
+				Si vous avez des suggestions, questions ou autre! (Anglais)<br /><br />
 
 					<?php
 					if(isset($hasError)) { 
@@ -135,7 +135,7 @@ if(isset($_POST['submit'])) {
 				
 				<form class="globalForms" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 					<div class="textInput">
-						<label class="keyWord">Name</label>
+						<label class="keyWord">Nom</label>
 						<div class="input"><input type="text" size="60" name="contactname" id="contactname" value="" /></div>
 					</div>
 					<div class="textInput">
@@ -143,11 +143,11 @@ if(isset($_POST['submit'])) {
 						<div class="input"><input type="text" size="60" name="email" id="email" value="" /></div>
 					</div>
 					<div class="textInput">
-						<label class="keyWord">Username (optional)</label>
+						<label class="keyWord">Nom d'utilisateur(optionel)</label>
 						<div class="input"><input type="text" size="60" name="username" id="username" value="" /></div>
 					</div>
 					<div class="textInput">
-						<label class="keyWord">Subject</label>
+						<label class="keyWord">Sujet</label>
 						<div class="input"><input type="text" size="60" name="subject" id="subject" value="" /></div>
 					</div>
 					<div class="textInput">
@@ -158,7 +158,7 @@ if(isset($_POST['submit'])) {
 					</div>
 					<div class="buttons">
 						<div class="input">
-							<button class="button green" name="submit" type="submit">Submit</button>
+							<button class="button green" name="submit" type="submit">Envoyer</button>
 						</div>
 					</div>
 				</form>
