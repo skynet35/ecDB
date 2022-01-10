@@ -50,9 +50,9 @@
 			<div id="content">
 				<div class="loginWrapper">
 					<div class="left">
-						<h1>Donate</h1>
-							ecDB is completely free!<br />
-							However, if you like ecDB you may use the button below to donate some money to the project!<br /><br />
+						<h1>Soutien</h1>
+							ecDB est complètement gratuit<br />
+							Cependant, vous pouvez soutenir ecDB en clicant sur ce bouton et donner de l'argent!<br /><br />
 							<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 								<input type="hidden" name="cmd" value="_s-xclick">
 								<input type="hidden" name="hosted_button_id" value="7ZT5UY5XMHA52">
