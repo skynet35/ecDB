@@ -12,18 +12,18 @@
 	$errflag = false;
 	
 	//Connect to mysql server
-	$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
+	$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	if(!$link) {
-		die('Failed to connect to server: ' . mysql_error());
+		die('Failed to connect to server: ' . mysqli_error($link));
 	}
 	
 	//Select database
-	$db = mysql_select_db(DB_DATABASE);
+	$db = mysqli_select_db($link, DB_DATABASE);
 	if(!$db) {
 		die("Unable to select database");
 	}
 	
-	mysql_set_charset('utf8');
+	mysqli_set_charset($link, 'utf8');
 	
 	//Function to sanitize values received from the form. Prevents SQL injection
 	function clean($str) {
@@ -31,7 +31,7 @@
 		if(get_magic_quotes_gpc()) {
 			$str = stripslashes($str);
 		}
-		return mysql_real_escape_string($str);
+		return mysqli_real_escape_string($link, $str);
 	}
 	
 	//Sanitize the POST values
@@ -44,67 +44,67 @@
 	
 	//Input Validations
 	if($fname == '') {
-		$errmsg_arr[] = 'First name missing';
+		$errmsg_arr[] = 'Il manque le nom';
 		$errflag = true;
 	}
 	if (strlen($fname) <= 2){
-		$errmsg_arr[] = 'Minimum of 2 chars in first name.';
+		$errmsg_arr[] = 'Minimum de 2 caractères pour le nom';
 		$errflag = true;
 	}
 	if($mail == '') {
-		$errmsg_arr[] = 'Mail missing';
+		$errmsg_arr[] = 'Il manque le mail';
 		$errflag = true;
 	}
 	if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
-		$errmsg_arr[] = 'Invalid e-mail address';
+		$errmsg_arr[] = 'e-mail invalide';
 		$errflag = true;
 	}
 	if($lname == '') {
-		$errmsg_arr[] = 'Last name missing';
+		$errmsg_arr[] = 'Prenom manquant';
 		$errflag = true;
 	}
 	if (strlen($lname) <= 2){
-		$errmsg_arr[] = 'Minimum of 2 chars in last name.';
+		$errmsg_arr[] = 'Minimum de 2 caractères pour le prenom';
 		$errflag = true;
 	}
 	if($login == '') {
-		$errmsg_arr[] = 'Username missing';
+		$errmsg_arr[] = 'Nom d utilisateur manquant';
 		$errflag = true;
 	}
 	if (strlen($login) <= 2){
-		$errmsg_arr[] = 'Minimum of 2 chars in username.';
+		$errmsg_arr[] = 'Minimum de 2 caractères pour l utilisateur';
 		$errflag = true;
 	}
 	if($password == '') {
-		$errmsg_arr[] = 'Password missing';
+		$errmsg_arr[] = 'Mot de pass manquant';
 		$errflag = true;
 	}
 	if($cpassword == '') {
-		$errmsg_arr[] = 'Confirm password missing';
+		$errmsg_arr[] = 'Confirmation Mot de pass manquant';
 		$errflag = true;
 	}
 	if (strlen($password) <= 5){
-		$errmsg_arr[] = 'Minimum of 5 chars in password.';
+		$errmsg_arr[] = 'Minimum de 5 caractères pour le mot de pass';
 		$errflag = true;
 	}
 	if( strcmp($password, $cpassword) != 0 ) {
-		$errmsg_arr[] = 'Passwords do not match';
+		$errmsg_arr[] = 'Mot pass non identique';
 		$errflag = true;
 	}
 	
 	//Check for duplicate login ID
 	if($login != '') {
 		$qry = "SELECT * FROM members WHERE login='$login'";
-		$result = mysql_query($qry);
+		$result = mysqli_query($link,$qry);
 		if($result) {
-			if(mysql_num_rows($result) > 0) {
-				$errmsg_arr[] = 'Username already in use';
+			if(mysqli_num_rows($result) > 0) {
+				$errmsg_arr[] = 'L utilisateur existe deja';
 				$errflag = true;
 			}
-			@mysql_free_result($result);
+			@mysqli_free_result($result);
 		}
 		else {
-			die("Query failed");
+			die("Demande refusée");
 		}
 	}
 	
@@ -118,13 +118,13 @@
 
 	//Create INSERT query
 	$qry = "INSERT INTO members(firstname, lastname, login, mail, passwd) VALUES('$fname','$lname','$login','$mail','".md5($_POST['password'])."')";
-	$result = @mysql_query($qry);
+	$result = @mysqli_query($link,$qry);
 	
 	//Check whether the query was successful or not
 	if($result) {
 		header("location: register-success.php");
 		exit();
 	}else {
-		die("Query failed");
+		die("Demande refusée");
 	}
 ?>
