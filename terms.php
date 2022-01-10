@@ -36,38 +36,38 @@
 			?>
 			<!-- Main content -->
 			<div id="content">
-				<h1>Terms and Conditions & Privacy Policy</h1>
+				<h1>Conditions et politique de confidentialité</h1>
 
-					<h2>1. Terms</h2>
+					<h2>1 . Conditions</h2>
 
-					By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trademark law.<br /><br />
+					En accédant à ce site Web , vous acceptez d'être lié par ces sites Web Conditions générales d'utilisation , toutes les lois et réglementations applicables , et convenez que vous êtes responsable du respect des lois localement applicables . Si vous n'êtes pas d'accord avec l'une de ces conditions, vous n'êtes pas autorisé à utiliser ou accéder à ce site . Les matériaux contenus dans ce site web sont protégés par droit d'auteur et droit des marques<br /><br />
 
-					<h2>2. Membership</h2>
+					<h2>2 . Adhésion</h2>
 
-					As a condition to using the services you are required to register with ecDB. By registering with ecDB you certify that you always provide valid, and updated information, you are an individual (i.e., not a corporate entity) and that you have the legal rights to enter such an agreement. The ID and password (from now referred to as "login-data") is the sole responsibility. It is required that you, as a registered ecDB user maintain the safety of your own login-data.<br /><br />
+					Comme condition à l'utilisation des services que vous devez vous enregistrer avec ECDB . En vous inscrivant à ECDB vous certifiez que vous fournissez toujours des informations valables , et mis à jour , vous êtes un individu (ie , pas une personne morale ) et que vous avez les droits légaux pour entrer un tel accord . L'ID et le mot de passe ( à partir de maintenant dénommé « login- données " ) est de la seule responsabilité . Il est nécessaire que vous , en tant qu'utilisateur enregistré ECDB maintenir la sécurité de vos propres données login .<br /><br />
 
-					ecDB maintains the right to terminate your membership at any time, with or without motivation or warning. All members are responsible for the consequences of use of this website. In cases of conflict with one or more non-members or members, will ecDB not be liable for any damages caused, in the current situation or future, resulting from the conflict.<br /><br />
+					ECDB conserve le droit de résilier votre abonnement à tout moment , avec ou sans motivation ou un avertissement . Tous les membres sont responsables des conséquences de l'utilisation de ce site. En cas de conflit avec un ou plusieurs non- membres ou membres , sera ECDB pas responsable de tout dommage causé , dans la situation actuelle ou future , résultant du conflit .<br /><br />
 
-					As a registered ecDB user you warrant and agree to the fact that you will not contribute any content that (a) infringes, violates or otherwise interferes with any copyright or trademark of another party, (b) reveal any trade secret, unless you own the trade secret or has the owner’s permission to post it, (c) infringes any intellectual property right of another or the privacy or publicity rights of another, (d) is libelous, defamatory, abusive, threatening, harassing, hateful, offensive or otherwise violates any law or right of any third party.<br /><br />
+					En tant qu'utilisateur ECDB enregistré, vous garantissez et acceptez le fait que vous ne serez pas contribuer tout contenu ( a) viole , viole ou autrement interfère avec les droits d'auteur ou de la marque d'une autre partie , ( b ) révéler un secret commercial , sauf si vous possédez l' secret commercial ou a la permission du propriétaire pour le mettre , ( c ) enfreint les droits de propriété intellectuelle d'un tiers ou à la vie privée ou aux droits d'un autre , ( d) est diffamatoire, injurieux, menaçant , harcelant, offensant ou autrement viole tout droit ou à droite d'un tiers .<br /><br />
 
-					<h2>3. Disclaimer</h2>
+					<h2>3 . Responsabilité</h2>
 
-					ecDB reserves all rights and disclaims all liability. ecDB makes no guarantee of reliability, safety or operation of this site.<br />
-					As a registered user, you have full responsibility, without contradiction, for the information you publish and make widely available here.<br /><br />
+					ECDB réserve tous les droits et décline toute responsabilité . ECDB ne donne aucune garantie de fiabilité, de sécurité ou le fonctionnement de ce site .<br />
+					En tant qu'utilisateur enregistré , vous avez l'entière responsabilité , sans contradiction , pour les informations que vous publiez et de faire largement disponibles ici .<br /><br />
 
-					<h2>4. Ownership</h2>
+					<h2>4 . Propriété</h2>
 
-					It is strictly forbidden to copy, distribute, or modify any material from ecDB. You may print material for private use. For all other use requires permission from ecDB.<br /><br />
+					Il est strictement interdit de copier, distribuer , ou modifier tout matériau de ECDB . Vous pouvez imprimer des documents pour un usage privé . Pour toute autre utilisation nécessite l'autorisation de ECDB .<br /><br />
 
-					<h2>5. Site Terms of Use Modifications</h2>
+					<h2>5 . Site Conditions d'utilisation modifications</h2>
 
-					ecDB may revise these terms of use at any time without notice. By using ecDB you are agreeing to be bound by the then current version of these Terms and Conditions of Use.<br /><br />
+					ECDB peut réviser ces conditions d'utilisation à tout moment sans préavis . En utilisant ECDB vous acceptez d'être lié par la version alors en vigueur de ces Termes et Conditions d'utilisation .<br /><br />
 
-					<h2>Privacy Policy</h2>
+					<h2>Politique de confidentialité</h2>
 
-					ecDB handles your personal information in accordance with the European data protection laws.<br /><br />
+					ECDB gère vos renseignements personnels en conformité avec les lois européennes de protection des données .<br /><br />
 
-					Third parties can get access to all the information you intended to make public through your settings. Your email address or other personal data is NEVER shared by us to third parties.
+					Les tiers peuvent avoir accès à toutes les informations vous aviez l'intention de rendre public à travers vos paramètres . Votre adresse e-mail ou d'autres données personnelles ne sont jamais communiquées par nous à des tiers .
 			</div>
 				<!-- END -->
 				<!-- Text outside the main content -->
