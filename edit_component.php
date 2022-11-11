@@ -192,9 +192,9 @@
 									Quantite
 								</td>
 								<td>
-									<input name="quantity" type="text" class="small" value="<?php echo $executesql['quantity']; ?>" id="quantity"/>
-									<button class="button white small" name="quantity_increase" type="submit"><span class="icon medium roundPlus"></span></button>
 									<button class="button white small" name="quantity_decrease" type="submit"><span class="icon medium roundMinus"></span></button>
+                                    					<input name="quantity" type="text" class="small" value="<?php echo $executesql['quantity']; ?>" id="quantity"/>						
+                                    					<button class="button white small" name="quantity_increase" type="submit"><span class="icon medium roundPlus"></span></button>
 								</td>
 							</tr>
 							<tr>
@@ -234,9 +234,10 @@
 									A commander
 								</td>
 								<td>
-									<input name="orderquant" type="text" class="small" value="<?php echo $executesql['order_quantity']; ?>" id="orderquant"/>
-									<button class="button white small" name="orderquant_increase" type="submit"><span class="icon medium roundPlus"></span></button>
 									<button class="button white small" name="orderquant_decrease" type="submit"><span class="icon medium roundMinus"></span></button>
+                                    					<input name="orderquant" type="text" class="small" value="<?php echo $executesql['order_quantity']; ?>" id="orderquant"/>
+									<button class="button white small" name="orderquant_increase" type="submit"><span class="icon medium roundPlus"></span></button>
+								
 								</td>
 							</tr>
 							<tr>
@@ -443,7 +444,7 @@
 					<div class="buttons">
 						<div class="input">
 							<button class="button green" name="update" type="submit"><span class="icon medium save"></span> Mettre a jour</button>
-							<button class="button" name="based" type="submit"><span class="icon medium sqPlus"></span> Nouvelle base</button>
+							<button class="button" name="based" type="submit"><span class="icon medium sqPlus"></span> Créer nouveau composant de la même famille</button>
 							<button class="button red" name="delete" type="submit"><span class="icon medium trash"></span> Supprimer</button>
 						</div>
 					</div>
