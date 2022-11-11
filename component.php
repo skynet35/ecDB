@@ -211,6 +211,8 @@
 							<tr>
 								<td class="boldText">Quantite</td>
 								<td>
+									<form class="globalForms inLine" method="post" action="">
+										<button class="button white small" name="quantity_decrease" type="submit"><span class="icon medium roundMinus"></span></button>
 									<?php
 										if ($executesql['quantity'] == "") {
 											echo "-";
@@ -219,9 +221,8 @@
 											echo $executesql['quantity'];
 										}
 									?>
-									<form class="globalForms inLine" method="post" action="">
+									
 										<button class="button white small" name="quantity_increase" type="submit"><span class="icon medium roundPlus"></span></button>
-										<button class="button white small" name="quantity_decrease" type="submit"><span class="icon medium roundMinus"></span></button>
 									</form>
 								</td>
 								<td class="boldText">Prix</td>
@@ -237,8 +238,10 @@
 										}
 									?>
 								</td>
-								<td class="boldText">Quantite a commander</td>
+								<td class="boldText">Qantité a comander</td>
 								<td>
+									<form class="globalForms inLine" method="post" action="">
+										<button class="button white small" name="orderquant_decrease" type="submit"><span class="icon medium roundMinus"></span></button>
 									<?php
 										if ($executesql['order_quantity'] == "") {
 											echo "0";
@@ -247,9 +250,7 @@
 											echo $executesql['order_quantity'];
 										}
 									?>
-									<form class="globalForms inLine" method="post" action="">
-										<button class="button white small" name="orderquant_increase" type="submit"><span class="icon medium roundPlus"></span></button>
-										<button class="button white small" name="orderquant_decrease" type="submit"><span class="icon medium roundMinus"></span></button>
+									<button class="button white small" name="orderquant_increase" type="submit"><span class="icon medium roundPlus"></span></button>
 									</form>
 								</td>
 							</tr>
