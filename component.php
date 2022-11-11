@@ -437,7 +437,7 @@
 					<div class="buttons">
 						<div class="input">
 							<button class="button" name="edit" type="submit"><span class="icon medium pencil"></span> Editer Composant</button>
-							<button class="button" name="based" type="submit"><span class="icon medium sqPlus"></span> Nouvelle base</button>
+							<button class="button" name="based" type="submit"><span class="icon medium sqPlus"></span> Creer nouveau composant de même famille</button>
 							<button class="button red" name="delete" type="submit"><span class="icon medium trash"></span> Supprimer composant</button>
 						</div>
 					</div>
